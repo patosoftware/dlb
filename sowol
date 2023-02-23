@@ -1,0 +1,15 @@
+#!/bin/bash
+
+USAGE="usage: $(basename "$0") [url] [mac_address]"
+
+if [[ $# -ne 2 ]]; then
+    echo "$USAGE"
+    exit 1
+fi
+
+LIGHTSWITCH_URL=$1
+MAC_ADDRESS=$2
+
+if [[ $(curl --silent --head --output /dev/null --write-out "%{http_code}" "$LIGHTSWITCH_URL") = "200" ]]; then
+    wakeonlan "$MAC_ADDRESS"
+fi
