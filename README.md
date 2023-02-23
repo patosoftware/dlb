@@ -20,10 +20,10 @@ Currently `sowol` depends on the `wakeonlan` APT package.
 sudo apt-get update && sudo apt-get install -y wakeonlan
 ```
 
-## Install `sowol`
+## Download `sowol`
 
 ```
-curl -sL -o /usr/local/bin/sowol https://raw.githubusercontent.com/phuber92/sowol/main/sowol
+curl -O https://raw.githubusercontent.com/phuber92/sowol/main/sowol
 ```
 
 # Usage
