@@ -9,7 +9,7 @@ One great use case for `dlb` is to remotely trigger automations on your home net
 # Installation
 
 ```
-curl -O https://raw.githubusercontent.com/phuber92/dlb/main/dlb
+sudo curl -o /usr/local/bin/dlb https://raw.githubusercontent.com/phuber92/dlb/main/dlb
 ```
 
 # Usage
