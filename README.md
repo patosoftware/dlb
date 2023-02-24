@@ -1,36 +1,26 @@
-# sowol
+# dlb (Dead Letter Box)
 
-Secure Outbound Wake on LAN
+`dlb` makes a `GET` request to a provided URL. If the `GET` request returns HTTP `200 OK` the provided command will be executed.
 
-# What is `sowol`?
+`dlb` functions as a digital "Dead Letter Box" or "Dead Drop" used in the physical world of espionage. Once something appears in the dead drop location (URL), take a corresponding action (execute a command).
 
-`sowol` will make a `GET` request to a provided URL. If the `GET` request returns a `200` status code a Wake-on-LAN (WoL) magic packet will be sent to the provided MAC address.
-
-When set up correctly you can securely wake a device over the internet without any inbound firewall rules.
-
-One use case I've found useful is to cron `sowol` on a device like a Raspberry Pi on your network. Set the URL to a raw file from a GitHub repo. If the file exists in the repo `sowol` will wake the device and if not it will do nothing. You can then make commits to add and remove the "lightswitch" file from the repo to trigger `sowol` to wake the device or not. This setup works great for waking you gaming PC remotely so you can use Steam Remote Play without having to leave your PC awake 24x7.
+One great use case for `dlb` is to remotely trigger automations on your home network without needing to poke pinholes in your home firewall. Cron `dlb` with the URL of a file in your public GitHub repo and once it appears reboot your home PC.
 
 # Installation
 
-## Dependencies
-
-Currently `sowol` depends on the `wakeonlan` APT package.
-
 ```
-sudo apt-get update && sudo apt-get install -y wakeonlan
-```
-
-## Download `sowol`
-
-```
-curl -O https://raw.githubusercontent.com/phuber92/sowol/main/sowol
+curl -O https://raw.githubusercontent.com/phuber92/dlb/main/dlb
 ```
 
 # Usage
 
 ```
-sowol [url] [mac_address]
+dlb [url] [command]
 ```
+
+## Example
+
+dlb https://raw.githubusercontent.com/phuber92/lightswitch/main/on cp ~/foo ~/bar
 
 # To-Do
 
