@@ -20,7 +20,9 @@ dlb [url] [command]
 
 ## Example
 
+```
 dlb https://raw.githubusercontent.com/phuber92/lightswitch/main/on cp ~/foo ~/bar
+```
 
 # To-Do
 
