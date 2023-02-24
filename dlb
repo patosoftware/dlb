@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 USAGE="usage: $(basename "$0") [url] [command]"
 
