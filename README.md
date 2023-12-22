@@ -23,7 +23,3 @@ dlb [url] [command]
 ```
 dlb https://raw.githubusercontent.com/phuber92/lightswitch/main/on cp ~/foo ~/bar
 ```
-
-# To-Do
-
-1. Rewrite in `rust` and publish binaries for all possible OS/arch combinations.
